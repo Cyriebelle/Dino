@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Special Place</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-overlay"></div>
+
+    <div class="top-left-branding">
+        <img src="GIF/qoobee-cute.gif" class="logo-hint" alt="Dino">
+        <button id="home-btn" class="hidden-nav">HOME</button>
+    </div>
+
+    <button class="game-trigger-btn hidden-nav" id="find-dino-btn">FIND THE DINO</button>
+    
+    <img src="GIF/qoobee-cute.gif" class="hidden-game-dino" id="game-dino">
+
+    <main class="main-wrapper">
+        <div class="intro-box">
+            
+            <div id="state-welcome" class="state-container">
+                <p class="intro">For the person who makes every day better just by being in it. I hope this brings a little magic to your screen.</p>
+                <button class="start-btn" id="start-btn">Start Exploring</button>
+            </div>
+
+            <div id="state-options" class="state-container hidden-content">
+                <h2 class="welcome-title">Hi baby!!💛</h2>
+                <p class="box-footer">Here's a little gift for you.</p>
+                <div class="options-grid">
+                    <button class="menu-choice" id="btn-reasons">✨ REASONS</button>
+                    <button class="menu-choice" id="btn-letter">💌 LETTER</button>
+                    <button class="menu-choice" id="btn-surprise">🎁 SURPRISE</button>
+                </div>
+            </div>
+
+            <div id="state-reasons" class="state-container hidden-content">
+                <h2 class="welcome-title">Reasons Why?</h2>
+                <div class="reasons-list">
+                    <p>1. The way you put other people first.</p>
+                    <p>2. Your kindness to everyone you meet.</p>
+                    <p>3. How you believe in me even when I don’t believe in myself.</p>
+                    <p>4. How you can lift up the mood with your smile and jolliness.</p>
+                    <p>5. Simply because you are you, and there’s no one else like you in this world.</p>
+                </div>
+                <button class="menu-choice back-btn">Back</button>
+            </div>
+
+            <div id="state-success" class="state-container hidden-content">
+                <h2 class="welcome-title">Found Me! 🦖</h2>
+                <p>You have sharp eyes! You always notice the little things.</p>
+                <button class="menu-choice" id="reset-game">Back to Menu</button>
+            </div>
+            
+            <div id="state-surprise" class="state-container hidden-content">
+                <h2 class="welcome-title">My Surprise</h2>
+                <div class="declaration-box">
+                    <p class="intro-text">
+                        You’ve spent all this time showing me who you are, and I’ve cherished every second of it.
+                        Even though I couldn't keep the secret last week, I still wanted to make this for you. I wanted you 
+                        to feel extra special and make this a memorable end to your first time courting someone.
+                        
+                        <br>
+                        <span class="highlight-text">I’m ready whenever you are. ✨</span>
+                        </br>
+
+                    </p>
+                </div>
+                <button class="menu-choice back-btn">Back</button>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
