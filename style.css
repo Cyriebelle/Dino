@@ -33,14 +33,16 @@ body, html {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Dino Pop Effect */
 @keyframes dinoPop {
     0% { transform: scale(1); }
     50% { transform: scale(1.4); opacity: 0.5; }
     100% { transform: scale(0); opacity: 0; }
 }
 
-.state-container { animation: fadeInSlide 1.8s ease-in-out forwards; }
+.state-container { 
+    animation: fadeInSlide 1.8s ease-in-out forwards; 
+    opacity: 0; /* Starts hidden, animation brings it to 1 */
+}
 .fast-fade { animation: fadeInSlide 0.5s ease-out forwards !important; }
 .dino-exit { animation: dinoPop 0.3s ease-out forwards; }
 
@@ -53,68 +55,56 @@ body, html {
 .logo-hint { height: 70px; width: auto; transition: 0.5s; }
 
 #home-btn {
-    /* The Glass Look */
     background: rgba(255, 255, 255, 0.1); 
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    
-    /* Shape & Size */
     padding: 8px 20px;
     border-radius: 10px;
     margin-left: 20px;
-    
-    /* Typography */
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     cursor: pointer;
-    
-    /* Animation */
     transition: all 0.4s ease;
 }
 
-/* Hover effect to match the other buttons */
 #home-btn:hover {
     background: white;
     color: black;
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+
 .game-trigger-btn {
     position: fixed; 
     top: 40px; 
     right: 40px;
-    
-    /* Matching the Glassy Theme */
     background: rgba(255, 255, 255, 0.1); 
-    color: white; /* Changed from black to white */
+    color: white;
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    
-    /* Shape & Typography */
     padding: 12px 25px; 
     border-radius: 30px;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    
     cursor: pointer; 
     z-index: 100;
     transition: all 0.4s ease;
 }
 
-/* Hover effect: Button turns solid white with black text */
 .game-trigger-btn:hover {
     background: white;
     color: black;
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
 }
+
 /* 4. The Glass Box */
 .main-wrapper {
     height: 100vh; display: flex;
@@ -130,21 +120,30 @@ body, html {
     text-align: center; width: 450px;
     border: 1px solid rgba(255,255,255,0.1);
     transition: all 1s ease-in-out;
+    
+    /* Necessary for the long letter */
+    max-height: 85vh;
+    overflow-y: auto;
 }
 
+/* Scrollbar styling for the box */
+.intro-box::-webkit-scrollbar { width: 5px; }
+.intro-box::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+
 .welcome-title {
-    margin-bottom: 0;      /* Removes the gap below the title */
-    padding-bottom: 0;     /* Ensures no hidden spacing */
-    line-height: 1;      /* Keeps the title height tight */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; 
+    font-weight: 600;
+    margin-bottom: 0;
+    line-height: 1;
 }
 
 .box-footer {
-    /* Set this to Garamond to match the title */
     font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;      /* Garamond runs small, so we bump the size up */
+    font-size: 18px;
     font-weight: 400;
-    font-style: italic;   /* Optional: italics look beautiful in Garamond */
-    margin-top: 10px;    /* Pulls it tight under the title */
+    font-style: italic;
+    margin-top: 10px;
     margin-bottom: 30px;
     opacity: 0.8;
     display: block;
@@ -153,50 +152,31 @@ body, html {
 
 .reasons-list p {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;    /* Makes the reasons look like an elegant list */
+    font-size: 1.3rem;
     margin-bottom: 12px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     padding-bottom: 8px;
     color: #fff;
 }
 
-/* Ensure the welcome title is definitely Garamond too */
-.welcome-title { 
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem; 
-    font-weight: 600;
-    margin-bottom: 0;
-}
-
-.welcome-title { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; }
 .intro { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; line-height: 1.6; }
 
-/* Update this section in your style.css */
-
 .start-btn, .menu-choice {
-    /* The Glass Look */
     background: rgba(255, 255, 255, 0.1); 
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
-    
-    /* Shape & Size */
     padding: 12px 30px;
-    border-radius: 12px; /* Less rounded, more modern 'tile' look */
+    border-radius: 12px;
     cursor: pointer;
     margin: 5px;
-    
-    /* Typography */
     font-weight: 500;
     font-size: 13px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    
-    /* Animation */
     transition: all 0.4s ease;
 }
 
-/* Hover effect: The button 'lights up' and turns white */
 .start-btn:hover, .menu-choice:hover {
     background: white;
     color: black;
@@ -208,30 +188,36 @@ body, html {
 .hidden-game-dino {
     position: absolute; width: 90px;
     z-index: 9999 !important; cursor: pointer; display: none;
-    }
+}
 
-    /* Dino Success Screen Styling */
-    #state-success .welcome-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 3rem;
-        font-weight: 600;
+#state-success .welcome-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 600;
 }
 
 #state-success p {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.4rem;
     color: #fff;
-    margin-top: -1px;   /* Tight spacing to match your 'Hi baby' look */
+    margin-top: -1px;
     margin-bottom: 25px;
 }
 
-/* 6. Utility */
-.hidden-content { display: none !important; opacity: 0; }
+/* 6. Utility (MODIFIED: Removed !important from display) */
+.hidden-content { 
+    display: none; 
+} 
+
+/* Add this to force the text to be visible and white */
+#state-letter, .letter-text, .letter-text p {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
 .hidden-nav { display: none !important; }
 .show-nav { display: block !important; animation: fadeInSlide 2s ease forwards; }
 
 /* 7. Added Surprise Section Styles */
-
 #state-surprise .intro-text {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.4rem;
@@ -249,8 +235,10 @@ body, html {
     font-family: 'Cormorant Garamond', serif;
     display: block;
     font-size: 1.9rem;
-    color: #FFD700; /* Gold */
+    color: #FFD700;
     font-weight: 600;
     margin-top: 15px;
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
+
+.petal { position: fixed; z-index: 10000; pointer-events: none; }
