@@ -17,7 +17,6 @@
     </div>
 
     <button class="game-trigger-btn hidden-nav" id="find-dino-btn">FIND THE DINO</button>
-    
     <img src="GIF/qoobee-cute.gif" class="hidden-game-dino" id="game-dino">
 
     <main class="main-wrapper">
@@ -34,7 +33,6 @@
                 <div class="options-grid">
                     <button class="menu-choice" id="btn-reasons">✨ REASONS</button>
                     <button class="menu-choice" id="btn-letter">💌 LETTER</button>
-                    <button class="menu-choice" id="btn-surprise">🎁 SURPRISE</button>
                 </div>
             </div>
 
@@ -50,35 +48,42 @@
                 <button class="menu-choice back-btn">Back</button>
             </div>
 
+            <div id="state-letter" class="state-container hidden-content">
+                <h2 class="welcome-title">My Letter</h2>
+                <div class="letter-text" style="text-align: left; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; line-height: 1.6; color: white;">
+                    <p>Hi there again, baby! I always say that I wouldn't know what to say whenever I am writing a letter to you, and it is the same thing for this one. Perhaps I should begin by expressing my gratitude for the opportunity to have you in my life. I know that you already know this because I had said this before, but really, you made a huge impact on my life.</p>
+
+                    <p>Honestly, before you came, I did not have any plans on extending here in Canada. My plan after graduation was to go back to the Philippines and start my career there. This was my thinking because I do not have any reason to stay here. But since you came, I now have enough reason for me to be more eager to extend my visa in this country. You brought a kind of light that I didn't realize I was missing. You've challenged me and supported me in ways that made me want to be a better version of myself.</p>
+
+                    <p>You mentioned last week that I was not demanding a lot or that you were the only one who wanted something in this relationship. It may look like I do not care because I wasn't saying or giving my opinion, but I assure you that everything is fine with me. I will make sure to say it to you whenever I feel like something is not right on my end.</p>
+
+                    <p>My decision to stay and build a career here is one I’m making for my own future and my own growth. But you are the reason that the future looks so much brighter to me now. You’ve given me a sense of belonging in this country that I didn’t have before, and that makes the hard work of staying feel worth it.</p>
+
+                    <div id="final-reveal-area" style="text-align: center; margin-top: 30px;">
+                        <button class="start-btn" id="reveal-btn" onclick="showFinalSurprise()">One more thing...</button>
+                    </div>
+
+                    <div id="green-light-msg" style="display: none; text-align: center; margin-top: 20px;">
+                        <h2 class="welcome-title" style="font-size: 2.2rem; margin-bottom: 15px;">My Surprise</h2>
+                        <p>You’ve spent all this time showing me who you are, and I’ve cherished every second of it. Even though I couldn't keep the secret last week, I still wanted to make this for you. I wanted you to feel extra special and make this a memorable end to your first time courting someone.</p>
+                        
+                        <h2 class="highlight-text" style="color: #FFD700; font-size: 1.9rem; margin-top: 25px;">I’m ready whenever you are. ✨</h2>
+                        
+                        <p style="margin-top: 30px;">Always yours,<br><strong>Cy</strong></p>
+                    </div>
+                </div>
+                <button class="menu-choice back-btn" style="margin-top:20px;">Back</button>
+            </div>
+
             <div id="state-success" class="state-container hidden-content">
                 <h2 class="welcome-title">Found Me! 🦖</h2>
                 <p>You have sharp eyes! You always notice the little things.</p>
                 <button class="menu-choice" id="reset-game">Back to Menu</button>
             </div>
             
-            <div id="state-surprise" class="state-container hidden-content">
-                <h2 class="welcome-title">My Surprise</h2>
-                <div class="declaration-box">
-                    <p class="intro-text">
-                        You’ve spent all this time showing me who you are, and I’ve cherished every second of it.
-                        Even though I couldn't keep the secret last week, I still wanted to make this for you. I wanted you 
-                        to feel extra special and make this a memorable end to your first time courting someone.
-                        
-                        <br>
-                        <span class="highlight-text">I’m ready whenever you are. ✨</span>
-                        </br>
-
-                    </p>
-                </div>
-                <button class="menu-choice back-btn">Back</button>
-            </div>
-
         </div>
     </main>
 
     <script src="script.js"></script>
 </body>
-
 </html>
-
-
